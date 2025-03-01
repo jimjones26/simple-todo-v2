@@ -19,7 +19,7 @@ vi.mock('$lib/server/prisma', () => {
   return { prisma: mockPrisma };
 });
 
-test.skip('GET /api/auth/callback/email verifies token, creates/logs in user, and redirects', async () => {
+test('GET /api/auth/callback/email verifies token, creates/logs in user, and redirects', async () => {
   const mockEmail = 'test@example.com';
   const mockToken = 'valid-token';
 
