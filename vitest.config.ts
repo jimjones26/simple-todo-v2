@@ -5,8 +5,7 @@ import path from 'path'; // Import the 'path' module
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
-    include: ['src/**/*.{test,spec}.{js,ts}'],
-    globals: true,
+    include: ['src/**/*.{test,spec}.{js,ts}', 'tests/**/*.{test,spec}.{js,ts}'],
     environment: 'jsdom', // or 'node', depending on your test needs
     setupFiles: ['./vitest-setup-client.ts'], // Keep this line
   },
