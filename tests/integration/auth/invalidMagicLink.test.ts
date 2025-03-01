@@ -2,7 +2,7 @@ import { test, expect } from 'vitest';
 
 test('POST /api/auth/signin/email with invalid email returns 400', async () => {
     //This is needed because we do not have a running server in the integration test
-    const mockRequest = new Request('/api/auth/signin/email', {
+    const mockRequest = new Request('http://localhost/api/auth/signin/email', {
         method: 'POST',
         body: JSON.stringify({ email: 'invalid-email' }), // Invalid email format
         headers: {

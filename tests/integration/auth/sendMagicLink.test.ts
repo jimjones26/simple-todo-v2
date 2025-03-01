@@ -12,7 +12,7 @@ test('POST /api/auth/signin/email sends magic link email', async () => {
   const mockEmail = 'test@example.com';
 
     //This is needed because we do not have a running server in the integration test
-    const mockRequest = new Request('/api/auth/signin/email', {
+    const mockRequest = new Request('http://localhost/api/auth/signin/email', {
         method: 'POST',
         body: JSON.stringify({ email: mockEmail }),
         headers: {

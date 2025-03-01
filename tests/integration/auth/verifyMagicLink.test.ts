@@ -50,7 +50,7 @@ test.skip('GET /api/auth/callback/email verifies token, creates/logs in user, an
 
   // Assertions for new user creation:
   expect(prisma.user.findUnique).toHaveBeenCalledWith({ where: { email: mockEmail } });
-  expect(prisma.user.create).toHaveBeenCalledWith({  { email: mockEmail } });
+  expect(prisma.user.create).toHaveBeenCalledWith({ email: mockEmail });
   expect(response.status).toBe(302); // Expect a redirect
   expect(response.headers.get('location')).toBe('/tasks'); // Redirect to /tasks
 
