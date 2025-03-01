@@ -4,6 +4,14 @@ vi.mock('$lib/server/email', () => ({
   sendMagicLinkEmail: vi.fn(),
 }));
 
+vi.mock('$lib/server/prisma', () => ({
+  prisma: {
+    verificationToken: {
+      create: vi.fn(),
+    },
+  },
+}));
+
 import { sendMagicLinkEmail } from '$lib/server/email';
 import { POST } from '@routes/api/auth/signin/email/+server';
 
