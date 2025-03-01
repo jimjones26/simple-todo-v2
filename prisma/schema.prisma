@@ -15,3 +15,11 @@ model User {
   email     String   @unique
   createdAt DateTime @default(now())
 }
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
