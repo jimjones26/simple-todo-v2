@@ -44,10 +44,9 @@ export const GET: RequestHandler = async ({ url }) => {
 	// If the user doesn't exist, create them
 	if (!user) {
 		user = await prisma.user.create({
-			 {
-				email: email,
-			},
-		});
+					email,
+				},
+			);
 	}
 
 	// Delete the verification token (it's a one-time use token)
