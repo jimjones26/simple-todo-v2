@@ -23,16 +23,16 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	if (!verificationToken || verificationToken.expires < new Date()) {
 		// Delete the expired token
-        if (verificationToken) {
-            await prisma.verificationToken.delete({
-                where: {
-                    identifier_token: {
-                        identifier: email,
-                        token: token
-                    }
-                }
-            });
-        }
+		if (verificationToken) {
+			await prisma.verificationToken.delete({
+				where: {
+					identifier_token: {
+						identifier: email,
+						token: token
+					}
+				}
+			});
+		}
 		throw new Error('Invalid or expired token'); // Or redirect to an error page
 	}
 
@@ -44,9 +44,9 @@ export const GET: RequestHandler = async ({ url }) => {
 	// If the user doesn't exist, create them
 	if (!user) {
 		user = await prisma.user.create({
-					email,
-				},
-			);
+			data: { email, },
+		},
+		);
 	}
 
 	// Delete the verification token (it's a one-time use token)
