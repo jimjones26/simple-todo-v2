@@ -7,6 +7,7 @@ export default defineConfig({
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'tests/**/*.{test,spec}.{js,ts}'],
     environment: 'jsdom', // or 'node', depending on your test needs
+    exclude: ['tests/e2e'],
     setupFiles: ['./vitest-setup-client.ts'], // Keep this line
   },
   resolve: {
