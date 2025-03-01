@@ -5,7 +5,7 @@ vi.mock('$lib/server/email', () => ({
 }));
 
 import { sendMagicLinkEmail } from '$lib/server/email';
-import { POST } from '../../../routes/api/auth/signin/email/+server';
+import { POST } from '@routes/api/auth/signin/email/+server';
 
 
 test('POST /api/auth/signin/email sends magic link email', async () => {
